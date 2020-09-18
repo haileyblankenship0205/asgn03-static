@@ -11,11 +11,7 @@ class Bird {
     static $egg_num = 0;
 
     function can_fly() {
-        if ( $this->flying == "yes" ) {
-            $flying_string = "can fly";
-        } else {
-            $flying_string = "is stuck on the ground";
-        }
+        $flying_string = "can fly" ?? "is stuck on the ground";
         return  $flying_string ;
     }
 
