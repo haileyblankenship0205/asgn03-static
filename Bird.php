@@ -7,6 +7,8 @@ class Bird {
     var $conservation;
     var $song = "chirp";
     var $flying = "yes";
+    static $instatnce_count = 0;
+    static $egg_num = 0;
 
     function can_fly() {
         if ( $this->flying == "yes" ) {
@@ -15,6 +17,10 @@ class Bird {
             $flying_string = "is stuck on the ground";
         }
         return  $flying_string ;
+    }
+
+    public static function create() {
+        return self::$instatnce_count++;
     }
 }
 
@@ -28,4 +34,5 @@ class Kiwi extends Bird {
     var $name = "kiwi";
     var $diet = "omnivorous";
     var $flying = "no";
+    static $egg_num = "3-4, sometimes 5";
 }
